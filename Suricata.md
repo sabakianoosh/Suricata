@@ -1,95 +1,82 @@
 # **suricata**
 
-**Suricata is an open-source, high-performance network threat detection engine. It is capable of performing deep packet inspection, network security monitoring, and intrusion detection/prevention (IDS/IPS). Developed by the Open Information Security Foundation (OISF), Suricata is widely used by organizations to enhance their network security posture.
+Suricata is an open-source, high-performance network threat detection engine. It is capable of performing deep packet inspection, network security monitoring, and intrusion detection/prevention (IDS/IPS). Developed by the Open Information Security Foundation (OISF), Suricata is widely used by organizations to enhance their network security posture.
 
-**
 
-****1. Intrusion Detection and Prevention (IDS/IPS):**
+**1. Intrusion Detection and Prevention (IDS/IPS):**
 
 * Suricata can operate as both an intrusion detection system (IDS) and an intrusion prevention system (IPS).
 * In IDS mode, it monitors network traffic and generates alerts based on predefined rules when suspicious activity is detected.
 * In IPS mode, it can actively block or reject malicious traffic based on the same set of rules.
 
-**
 
-****2. Deep Packet Inspection (DPI):**
+**2. Deep Packet Inspection (DPI):**
 
 * Suricata performs deep packet inspection, analyzing the payload of packets beyond just the headers.
 * This allows for detailed examination of network traffic and detection of malicious activity within the data payload.
 
-**
 
-****3. Protocol Identification and Analysis:**
+**3. Protocol Identification and Analysis:**
 
 * Suricata can automatically identify various protocols and analyze traffic accordingly.
 * It supports protocols such as HTTP, DNS, TLS, FTP, SMB, and many others, enabling comprehensive analysis and detection capabilities.
 
-**
 
-****4. Multi-Threading and High Performance:**
+**4. Multi-Threading and High Performance:**
 
 * Suricata is designed to take advantage of modern multi-core processors, allowing for high-performance operation.
 * This makes it suitable for monitoring large networks with high traffic volumes.
 
-**
 
-****5. Rule-Based Detection:**
+**5. Rule-Based Detection:**
 
 * Suricata uses a rule-based language for defining detection patterns.
 * It is compatible with Snort rules, allowing users to leverage existing rule sets and create custom rules.
 
-**
 
-****6. File Extraction and Analysis:**
+**6. File Extraction and Analysis:**
 
 * Suricata can extract files from network traffic for further analysis.
 * This is useful for detecting malware, analyzing file transfers, and identifying suspicious file content.
 
-**
 
-****7. Integration with Other Tools:**
+**7. Integration with Other Tools:**
 
 * Suricata can integrate with various security tools and platforms, such as SIEMs (Security Information and Event Management), logging frameworks, and visualization tools.
 * It supports output formats like JSON, enabling easy integration and data sharing.
 
-**
 
-****8. Community and Support:**
+**8. Community and Support:**
 
 * Being open-source, Suricata has a vibrant community of users and developers contributing to its continuous improvement.
 * The OISF provides support, documentation, and training resources for users.
 
-**
 
 ## Typical Use Cases
 
-****1. Network Security Monitoring:**
+**1. Network Security Monitoring:**
 
 * Suricata is used to continuously monitor network traffic for signs of malicious activity or policy violations.
 * It provides real-time alerts and logs that help security teams respond to incidents quickly.
 
-**
 
-****2. Threat Detection:**
+**2. Threat Detection:**
 
 * Organizations deploy Suricata to detect various types of threats, including malware, exploits, and network attacks.
 * Its ability to analyze traffic at the application layer allows for detecting sophisticated threats that might bypass simpler detection mechanisms.
 
-**
 
-****3. Intrusion Prevention:**
+**3. Intrusion Prevention:**
 
 * In IPS mode, Suricata can actively block malicious traffic, preventing attacks from reaching their targets.
 * This proactive defense helps protect critical network resources and data.
 
-**
 
-****4. Compliance and Auditing:**
+**4. Compliance and Auditing:**
 
 * Suricata helps organizations meet regulatory requirements by monitoring and logging network activity.
 * It provides detailed records that can be used for auditing and compliance reporting.
 
-**
 
 ## Installation
 
@@ -193,15 +180,12 @@ sudo tail -f /var/log/suricata/eve.json | jq 'select(.event_type=="alert")'
 
 Rule Breakdown:
 
-**
 
 **`alert`**:
 
 * This specifies the action that Suricata should take when a packet matches the rule. In this case, "alert" means that Suricata will log an alert if the rule is triggered.
 
-**
 
-**
 
 **`ip any any -> any any`**:
 
@@ -211,7 +195,6 @@ Rule Breakdown:
   * The `->` symbol indicates the direction of the traffic (from source to destination).
   * The second `any any` specifies that the destination IP address and port can also be any value.
 
-**
 
 fast.log contains the actual intrusion log store and eve.json save this in json format.
 
@@ -226,9 +209,8 @@ sudo ls -al /var/lib/surcata/rules
 
 # Installation : source
 
-**Compiling Suricata from source provides more control over the installation, allowing you to enable or disable specific features, optimize the build for your hardware, or apply custom patches.
+Compiling Suricata from source provides more control over the installation, allowing you to enable or disable specific features, optimize the build for your hardware, or apply custom patches.
 
-**
 
 ```
 tar xzvf suricata-6.0.0.tar.gz
